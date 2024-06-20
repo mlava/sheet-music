@@ -52,7 +52,7 @@ export default {
                 clipText = await navigator.clipboard.readText();
                 def = clipText.replaceAll("\n", "\r");
             } else {
-                def = "X:     %reference\rT:     %title\rC:     %composer\rA:     %area\rO:     %origin\rK:     %key\rL:     %unit note length\rM:     %meter\rQ:     %tempo\rR:     %rhythm\rB:     %book\rD:     %discography\rF:     %file url\rS:     %source";
+                def = "X:     %reference\rT:     %title\rC:     %composer\rA:     %area\rO:     %origin\rK:     %key\rL:     %unit note length\rM:     %meter\rQ:     %tempo\rR:     %rhythm\rB:     %book\rD:     %discography\rF:     %file url\rS:     %source\rC, D, E, F, | G, A, B, C | D E F G | A B c d | e f g a | b c' d' e' | f' g' a' b' |]";
             }
             var source = "[Abc Standard](https://abcnotation.com/wiki/abc:standard)";
 
