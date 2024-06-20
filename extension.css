@@ -1,5 +1,4 @@
 .sheet-music {
-    width: 100%;
     background-color: #fff;
 }
 
@@ -21,4 +20,7 @@
 
 .sheetmusic-element-parent {
     background-color: white !important;
+    width: 100% !important;
 }
+
+div.sheetmusic-element-parent svg { max-width:100%; }
