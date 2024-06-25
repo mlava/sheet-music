@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "@slnsw/react-sheet-music": "^0.0.6",
-    "react-sheet-music": "^0.0.1",
     "roamjs-components": "^0.83.2"
   },
   "overrides": {
