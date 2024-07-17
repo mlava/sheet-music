@@ -5,8 +5,25 @@ var runners = {
     observers: [],
 }
 
+// config page for future opens to define widths, colours etc
+/*
+const config = {
+    tabTitle: "Sheet Music",
+    settings: [
+        {
+            id: "chess-rAPI-key",
+            name: "RapidAPI Key",
+            description: "Your API Key for RapidAPI from https://rapidapi.com/KeeghanM/api/chess-puzzles",
+            action: { type: "input", placeholder: "Add RapidAPI API key here" },
+        },
+    ]
+};
+*/
+
 export default {
     onload: ({ extensionAPI }) => {
+        //extensionAPI.settings.panel.create(config);
+        
         const onloadArgs = { extensionAPI };
         const sheetmusicObserver = createButtonObserver({
             attribute: 'sheetmusic',
@@ -15,6 +32,7 @@ export default {
             }
         });
         runners['observers'] = [sheetmusicObserver];
+
 
         extensionAPI.ui.commandPalette.addCommand({
             label: "Paste sheet music in ABC notation",

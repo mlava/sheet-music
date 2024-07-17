@@ -2,25 +2,21 @@
     background-color: #fff;
 }
 
-.sheet-music .abcjs-note_playing {
-    fill: #e6007e;
-}
-
-.sheet-music .abcjs-rest_playing {
-    fill: #e6007e;
-}
-
-.sheet-music .abcjs-lyric_playing {
-    fill: #e6007e;
-}
-
-.sheet-music .abcjs-note_selected {
-    fill: #e6007e;
-}
-
 .sheetmusic-element-parent {
     background-color: white !important;
-    width: 100% !important;
+    width: auto !important;
+    min-width: 400px !important;
+    max-width: 770px!important;
 }
 
-div.sheetmusic-element-parent svg { max-width:100%; }
+#conatiner {
+    display: grid !important;
+}
+
+#abcnotation-textarea {
+    min-height: 150px;
+    width: auto !important;
+    min-width: 350px !important;
+    max-width: 770px!important;
+    resize: vertical !important;
+}

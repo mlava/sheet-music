@@ -32,6 +32,6 @@ module.exports = {
         ],
       },
       resolve: {
-        extensions: ['.js', '.jsx'], // This will allow you to import .jsx files without needing to add the extension
+        extensions: ['.js', '.jsx'],
     },
 };
