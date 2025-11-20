@@ -13,12 +13,8 @@ You can find examples of music in abc notation at:
 - https://thesession.org/
 - https://www.montrealsession.ca/index.html
 
-Changes made in the abc notation child block will automatically render to the sheet music, as shown below. Now you can write music in Roam Research.
-
-![sheet-music](https://github.com/mlava/sheet-music/assets/6857790/9a360d0a-c9c0-4ef7-bd23-deab636e0a56)
-
 Standard abc notation applies - you can find a key to the notation at [abc notation](https://abcnotation.com/wiki/abc:standard).
 
 **Notes:**
 - In this first iteration, only one piece of music can be rendered on a page. I am working on a fix to allow multiple pieces to render correctly.
-- I am aware of an issue with overflow of the rendered sheet music on page resize, and am working on a fix.
+- At present, dragging notes in the rendered music will change the child block in RR but not the textarea box. I am working on a fix. In the meantime, you can click the pencil icon at top right to re-render the music and the changes you've made will be picked up.
