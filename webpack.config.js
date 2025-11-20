@@ -16,6 +16,11 @@ module.exports = {
     performance: {
         hints: false,
     },
+    externalsType: "window",
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    },
     module: {
         rules: [
             {

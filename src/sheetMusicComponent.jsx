@@ -4,7 +4,7 @@ import { AbcTextEditor } from "react-abc-editor";
 
 const SheetMusicElement = ({ blockUid }) => {
     var abc1 = "";
-    //    const [rerender, setRerender] = useState(false);
+    const [rerender, setRerender] = useState(false);
     var selectionCallback;
     var currentIndex = -1;
     var maxIndex = -1;
@@ -53,11 +53,10 @@ const SheetMusicElement = ({ blockUid }) => {
     }
 
     async function storeAbc(abc1) {
-        await sleep(100);
         await window.roamAlphaAPI.updateBlock({ "block": { "uid": blockData[":block/children"][0][":block/uid"], "string": abc1 } });
     }
 
-    function clickListener(abcelem, tuneNumber, classes, analysis, drag, mouseEvent) {
+    async function clickListener(abcelem, tuneNumber, classes, analysis, drag, mouseEvent) {
         if (drag) {
             selectionCallback = drag.setSelection;
             currentIndex = drag.index;
@@ -72,20 +71,14 @@ const SheetMusicElement = ({ blockUid }) => {
             var newText = arr.join("");
 
             abc1 = abc1.substring(0, abcelem.startChar) + newText + abc1.substring(abcelem.endChar);
-            storeAbc(abc1);
-        } /*
-        else if (abcelem.startChar >= 0 && abcelem.endChar >= 0) {
-            //formatAbc(abcelem.startChar, abcelem.endChar);
+            await storeAbc(abc1);
         }
-            */
     }
 
     useEffect(() => {
-        // future option to re-render on drag event
-        // setRerender(!rerender);
+        setRerender(!rerender);
 
         return async () => {
-            storeAbc(abc1);
         };
     }, []);
 
@@ -93,7 +86,7 @@ const SheetMusicElement = ({ blockUid }) => {
 };
 
 export const renderSheetMusic = createComponentRender(
-    ({ blockUid}) => <SheetMusicElement blockUid={blockUid} />,
+    ({ blockUid }) => <SheetMusicElement blockUid={blockUid} />,
     "sheetmusic-element-parent"
 );
 
